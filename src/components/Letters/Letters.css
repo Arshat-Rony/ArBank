@@ -1,0 +1,16 @@
+.letters {
+    width: 86%;
+    margin: 0 auto;
+    background-color: var(--footer-color);
+    color: white;
+    padding: 20px;
+}
+
+@media(min-width:768px) {
+    .letters {
+        width: 63%;
+        margin: 30px auto;
+        padding: 50px;
+        border-radius: 12px;
+    }
+}

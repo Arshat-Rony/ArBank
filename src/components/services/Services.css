@@ -1,0 +1,55 @@
+.services_container {
+    margin-top: 80px;
+}
+
+.services_text {
+    overflow: hidden;
+    position: relative;
+    transition: all 0.6s;
+}
+
+.services_text:hover .float {
+    background-color: var(--primary-color);
+}
+
+.services_text:hover {
+    transform: translateY(-10px);
+}
+
+.services_icon {
+    font-size: 30px;
+    background-color: white;
+    color: var(--primary-color);
+    padding: 12px;
+    position: absolute;
+    top: 12px;
+    border-radius: 100%;
+}
+
+.services_text_container {
+    margin-top: 60px;
+}
+
+.float {
+    background-color: rgba(255, 0, 0, 0.269);
+    width: 90%;
+    height: 90px;
+    border-radius: 80%;
+    position: relative;
+    bottom: 60px;
+    transition: all 0.6s;
+}
+
+@media (min-width:768px) {
+    .services_container {
+        margin-top: 140px;
+        overflow-x: hidden;
+    }
+
+    .services_text {
+        width: 320px;
+        background-color: rgb(243, 239, 239);
+        border-radius: 8px;
+    }
+
+}

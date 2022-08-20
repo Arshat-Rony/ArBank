@@ -1,0 +1,27 @@
+.loans_hero {
+    position: relative;
+}
+
+.loans_hero::before {
+    content: '';
+    background-color: rgba(255, 255, 255, 0.611);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.loans_hero_title {
+    position: absolute;
+    top: 40%;
+}
+
+
+
+@media(min-width:768px) {
+    .loans_hero {
+        height: 60vh;
+        background-color: white;
+    }
+}

@@ -1,0 +1,14 @@
+.account_type {
+    min-height: 571px;
+    position: relative;
+}
+
+.account_type_btns {
+    position: absolute;
+    bottom: 20px;
+    border-top: 1px solid rgba(167, 166, 166, 0.567);
+    width: 100%;
+    padding-top: 20px;
+    justify-content: center;
+    align-items: center;
+}

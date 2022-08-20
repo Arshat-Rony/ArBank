@@ -1,0 +1,22 @@
+.reach_cotainer>* {
+    flex-basis: 33.5%;
+    min-height: 350px;
+    min-width: 350px;
+}
+
+.query_container>* {
+    flex-basis: 50%;
+}
+
+@media(min-width:768px) {
+    .query_container>img {
+        height: 670px;
+
+    }
+
+    .query_container {
+        background-color: rgb(239, 239, 239);
+        margin-top: 120px;
+        padding: 0;
+    }
+}

@@ -1,0 +1,9 @@
+.projects_container {
+    max-width: 90%;
+    margin: 140px auto;
+    overflow: hidden;
+}
+
+.projects-container_details {
+    cursor: pointer;
+}

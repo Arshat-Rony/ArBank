@@ -1,0 +1,42 @@
+.finance_container {
+    margin-top: 90px;
+}
+
+.finance_text_container {
+    margin-top: 20px;
+}
+
+.finance_text {
+    cursor: pointer;
+    transition: all 0.6s;
+}
+
+.finance_icon {
+    color: var(--primary-color);
+    font-size: 45px;
+    margin-bottom: 12px;
+}
+
+.link {
+    color: black;
+    transition: all 0.6s;
+}
+
+.link:hover {
+    color: var(--primary-color);
+    display: block;
+    transform: translateX(4px);
+}
+
+
+@media(min-width:992px) {
+
+    .finance_text_container {
+        margin-top: 50px;
+        border: 1px solid rgb(220, 220, 220);
+    }
+
+    .finance_text {
+        border: 1px solid rgb(220, 220, 220);
+    }
+}

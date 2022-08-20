@@ -1,0 +1,26 @@
+.question {
+    border-bottom: 1px solid rgba(46, 46, 46, 0.16);
+    transition: all 0.5s;
+    padding-bottom: 6px;
+    width: 87%;
+    margin: 12px auto;
+    position: relative;
+}
+
+.question_icon {
+    cursor: pointer;
+}
+
+
+.question_icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+@media (min-width:768px) {
+    .question {
+        width: 53%;
+    }
+
+}

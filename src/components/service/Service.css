@@ -1,0 +1,18 @@
+.service {
+    background-color: rgba(42, 41, 41, 0.096);
+}
+
+.service>a {
+    color: black;
+    transition: all 0.6s;
+}
+
+.service>a:hover {
+    color: red;
+}
+
+@media(min-width:768px) {
+    .service {
+        width: 350px;
+    }
+}

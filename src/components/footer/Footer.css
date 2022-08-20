@@ -1,0 +1,33 @@
+.footer {
+    background-color: var(--footer-color);
+    color: white;
+}
+
+.footer_contents>* {
+    flex-basis: 50%;
+    position: relative;
+}
+
+@media(min-width:768px) {
+    .account>h2 {
+        flex-basis: 50%;
+    }
+
+    .footer_lead {
+        margin-bottom: 20px;
+    }
+
+    .footer_lead_foot {
+        margin-bottom: 30px;
+    }
+
+    .footer_lead::after {
+        content: '';
+        background-color: rgb(154, 154, 154);
+        width: 90%;
+        height: 1px;
+        position: absolute;
+        top: 37px;
+        left: 0;
+    }
+}

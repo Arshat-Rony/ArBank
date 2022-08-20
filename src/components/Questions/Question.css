@@ -1,0 +1,9 @@
+.question-container {
+    margin-top: 120px;
+}
+
+@media(min-width:768px) {
+    .question-container {
+        margin-top: 150px;
+    }
+}

@@ -1,0 +1,42 @@
+.login {
+    background-image: url(../../src/utilities/images/hero-resized-1\ \(1\).png);
+    background-position: fixed;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    overflow: hidden;
+}
+
+
+.img_login {
+    position: absolute;
+    top: 90px;
+    left: 46%;
+    background-color: rgba(255, 255, 255, 0.918);
+    border-radius: 100%;
+}
+
+.login_form {
+    background-color: rgba(255, 255, 255, 0.671);
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media(min-width:768px) {
+
+
+    .login_form {
+        width: 35%;
+        margin: 0 auto;
+    }
+
+    .img_login {
+        top: 100px;
+        left: 48.5%;
+    }
+}

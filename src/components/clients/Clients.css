@@ -1,0 +1,70 @@
+.review_container {
+    margin-top: 140px;
+    position: relative;
+    margin-bottom: 120px;
+}
+
+.review {
+    width: 70%;
+    margin: 0 auto;
+
+}
+
+.carousel {
+    position: relative;
+}
+
+.carousel img,
+.carousel .slide img {
+    width: 200px;
+    height: 220px;
+}
+
+.carousel .control-next.control-arrow:before {
+    border-left: 12px solid #5f1c1c;
+}
+
+.carousel .control-prev.control-arrow:before {
+    border-right: 12px solid #5f1c1c;
+}
+
+.carousel .control-next.control-arrow {
+    background-color: #5f1c1c5f;
+    position: relative;
+    left: 54%;
+}
+
+.carousel .control-prev.control-arrow {
+    background-color: #5f1c1c5f;
+    position: relative;
+    top: 525px;
+    z-index: 99;
+    left: 45%;
+    padding: 5px 4px;
+}
+
+.carousel .carousel-status {
+    color: #5f1c1c;
+    font-size: 20px;
+}
+
+@media (min-width:515px) {
+    .carousel .control-prev.control-arrow {
+        top: 524px;
+        left: 47%;
+    }
+}
+
+@media (min-width:768px) {
+    .carousel .control-prev.control-arrow {
+        top: 365px;
+        left: 47%;
+    }
+}
+
+@media (min-width:992px) {
+    .carousel .control-prev.control-arrow {
+        top: 268px;
+        left: 50%;
+    }
+}

@@ -1,0 +1,36 @@
+.primary_btn {
+    padding: 13px 27px;
+    position: relative;
+    border-radius: 40px;
+    transition: all 0.6s;
+    margin: 15px 0;
+    background-color: #b40e2f;
+    cursor: pointer;
+    color: white;
+}
+
+.btn_inside {
+    background-color: black;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 50%;
+    background-color: black;
+    width: 0.000003px;
+    height: 0.00000003%;
+    left: 55px;
+    transition: all 0.4s;
+    z-index: -99;
+}
+
+.primary_btn:hover .btn_inside {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 20px;
+}
+
+.primary_btn:hover {
+    color: white;
+    z-index: 99;
+}

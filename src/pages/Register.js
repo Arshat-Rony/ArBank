@@ -49,7 +49,7 @@ const Register = (props) => {
     }
 
     if (emailLoading) {
-        return <Loading></Loading>
+        return <div style={{ marginTop: "230px" }}><Loading color="red" type="spin"></Loading></div>;
     }
     const onSubmit = (newdata) => {
         createUserWithEmailAndPassword(newdata.email, newdata.password)

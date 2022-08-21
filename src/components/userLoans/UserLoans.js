@@ -4,6 +4,9 @@ import { connect, useSelector } from 'react-redux/es/exports';
 import { Link } from 'react-router-dom';
 import { getUserLoans, deleteLoans } from '../../store/actions/loansActions';
 import { toast } from "react-toastify"
+import Loading from '../Loading';
+import store from '../../store';
+import * as Types from "../../store/actions/types"
 
 const UserLoans = (props) => {
     const user = useSelector(state => state.rootReducer.auth.user.email)
@@ -20,13 +23,21 @@ const UserLoans = (props) => {
 
     useEffect(() => {
         props.getUserLoans(user)
+        return () => {
+            store.dispatch({
+                type: Types.LOAD_LOANS,
+                payload: {
+                    loans: []
+                }
+            })
+        }
     }, [props, user])
 
 
 
     return (
         <div>
-            <Link className='pt-md-4 d-inline-block' to="/loan"><button className="btn btn-danger">Apply Loan</button></Link>
+
             <div>
                 <table className="table mt-5 mt-md-2">
                     <thead>
@@ -40,7 +51,7 @@ const UserLoans = (props) => {
                     </thead>
                     <tbody>
                         {
-                            loans?.map((loan, index) =>
+                            loans ? loans.map((loan, index) =>
                                 <tr key={index} className='text-center'>
                                     <th scope="row">{index + 1}</th>
                                     <td>{loan.loanamount}</td>
@@ -50,11 +61,12 @@ const UserLoans = (props) => {
                                         <button onClick={() => handleDelete(loan._id)} className="btn btn-danger btn-sm">Delete</button>
                                     </td>
                                 </tr>
-                            )
+                            ) : <Loading></Loading>
                         }
                     </tbody>
                 </table>
             </div>
+            <Link className='pt-md-4 d-block text-center' to="/loan"><button className="btn btn-danger">Apply For Loan</button></Link>
         </div>
     );
 };

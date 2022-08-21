@@ -30,14 +30,14 @@ const Login = (props) => {
             toast("Welcome to ARBank");
         }
     }, [emailUser, from, navigate])
-    
+
     let userError;
     if (emailError) {
         userError = <p className='text-danger'>{emailError?.message}</p>
     }
 
     if (emailLoading) {
-        return <Loading></Loading>;
+        return <div style={{ marginTop: "230px" }}><Loading color="red" type="spin"></Loading></div>;
     }
 
 

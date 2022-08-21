@@ -3,6 +3,9 @@ import { useEffect } from 'react';
 import { connect, useSelector } from 'react-redux/es/exports';
 import { getAllusers, removeUser } from '../../store/actions/actionsCreator';
 import { toast } from "react-toastify"
+import Loading from '../Loading';
+import store from '../../store';
+import * as Types from "../../store/actions/types"
 
 const Users = (props) => {
 
@@ -10,6 +13,14 @@ const Users = (props) => {
 
     useEffect(() => {
         props.getAllusers()
+        return () => {
+            store.dispatch({
+                type: Types.LOAD_USERS,
+                payload: {
+                    users: []
+                }
+            })
+        }
     }, [props])
 
 
@@ -33,7 +44,7 @@ const Users = (props) => {
                     </thead>
                     <tbody>
                         {
-                            users?.map((user, index) =>
+                            users ? users.map((user, index) =>
                                 <tr key={index} className='text-center'>
                                     <th scope="row">{index + 1}</th>
                                     <td className='text-capitalize'>{user.name}</td>
@@ -44,7 +55,7 @@ const Users = (props) => {
                                         <button onClick={() => handleDelete(user._id)} className="btn btn-danger btn-sm">Delete</button>
                                     </td>
                                 </tr>
-                            )
+                            ) : <Loading color="red" type="spin"></Loading>
                         }
                     </tbody>
                 </table>

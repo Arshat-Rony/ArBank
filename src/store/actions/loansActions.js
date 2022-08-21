@@ -31,7 +31,7 @@ const getAlluserLoans = () => dispatch => {
     axios.get("https://arbank-server.herokuapp.com/api/users/alluserloans")
         .then(res => {
             return dispatch({
-                type: Types.LOAD_LOANS,
+                type: Types.LOAD_ALL_LOANS,
                 payload: {
                     loans: res.data.loans
                 }

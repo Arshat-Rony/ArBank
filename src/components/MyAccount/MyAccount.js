@@ -8,6 +8,9 @@ import UpdateModal from '../Modals/UpdateModal';
 import Button from 'react-bootstrap/Button';
 import { useForm } from "react-hook-form"
 import { toast } from 'react-toastify'
+import Loading from '../Loading';
+import store from '../../store';
+import * as Types from "../../store/actions/types"
 
 
 const formData = [
@@ -39,6 +42,14 @@ const MyAccount = (props) => {
 
     useEffect(() => {
         props.getAlltrans(user)
+        return () => {
+            store.dispatch({
+                type: Types.LOAD_TRANSACTION,
+                payload: {
+                    transaction: []
+                }
+            })
+        }
     }, [props, user, showform])
 
     return (
@@ -62,7 +73,7 @@ const MyAccount = (props) => {
                     <input className='btn btn-danger' type="submit" value="Send" />
                 </form>
             </div>
-            <div className={`${showform ? "d-none" : "d-block"}`}>
+            {<div className={`${showform ? "d-none" : "d-block"}`}>
                 <table className="table mt-5 mt-md-0">
                     <thead>
                         <tr className='text-center'>
@@ -75,7 +86,7 @@ const MyAccount = (props) => {
                     </thead>
                     <tbody>
                         {
-                            transactions.length > 0 && transactions.map((trans, index) =>
+                            transactions ? transactions.map((trans, index) =>
                                 <tr key={index} className='text-center'>
                                     <th scope="row">{index + 1}</th>
                                     <td>{trans.amount}</td>
@@ -94,14 +105,14 @@ const MyAccount = (props) => {
                                         </Button>
                                     </td>
                                 </tr>
-                            )
+                            ) : <div className="d-flex justify-content-center align-items-center "><Loading color="red" type="spin"></Loading></div>
                         }
                     </tbody>
                 </table>
                 {
                     show && <UpdateModal number={number} transaction={singleTrans} show={show} handleShow={handleShow} handleClose={handleClose} setSingleTrans={setSingleTrans} setShow={setShow}></UpdateModal>
                 }
-            </div>
+            </div>}
 
         </div>
     );

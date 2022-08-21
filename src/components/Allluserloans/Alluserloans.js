@@ -3,6 +3,9 @@ import { useEffect } from 'react';
 import { connect, useSelector } from 'react-redux/es/exports';
 import { getAlluserLoans, deleteLoans } from '../../store/actions/loansActions';
 import { toast } from 'react-toastify'
+import Loading from '../Loading';
+import store from '../../store';
+import * as types from "../../store/actions/types"
 
 const Alluserloans = (props) => {
 
@@ -11,6 +14,14 @@ const Alluserloans = (props) => {
 
     useEffect(() => {
         props.getAlluserLoans()
+        return () => {
+            store.dispatch({
+                type: types.LOAD_ALL_LOANS,
+                payload: {
+                    loans: []
+                }
+            })
+        }
     }, [props])
 
     const handleDelete = (id) => {
@@ -31,7 +42,7 @@ const Alluserloans = (props) => {
                 </thead>
                 <tbody>
                     {
-                        loans?.map((loan, index) =>
+                        loans ? loans.map((loan, index) =>
                             <tr key={index} className='text-center'>
                                 <th scope="row">{index + 1}</th>
                                 <td className='text-capitalize'>{loan.name}</td>
@@ -42,7 +53,7 @@ const Alluserloans = (props) => {
                                     <button onClick={() => handleDelete(loan._id)} className="btn btn-danger btn-sm">Delete</button>
                                 </td>
                             </tr>
-                        )
+                        ) : <Loading color="red" type="spin"></Loading>
                     }
                 </tbody>
             </table>

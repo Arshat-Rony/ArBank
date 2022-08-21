@@ -2,7 +2,7 @@ import axios from 'axios'
 import * as Types from "../actions/types"
 
 const sendMessage = (data) => dispatch => {
-    axios.post('http://localhost:8000/api/users/message', data)
+    axios.post('https://arbank-server.herokuapp.com/api/users/message', data)
         .then(res => {
             dispatch({
                 type: Types.SET_MESSAGE,

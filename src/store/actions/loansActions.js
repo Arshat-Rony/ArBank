@@ -3,7 +3,7 @@ import * as Types from "../actions/types"
 
 
 const sendLoans = (data) => dispatch => {
-    axios.post("http://localhost:8000/api/users/loans", data)
+    axios.post("https://arbank-server.herokuapp.com/api/users/loans", data)
         .then(res =>
             dispatch({
                 type: Types.SET_LOANS,
@@ -15,7 +15,7 @@ const sendLoans = (data) => dispatch => {
 }
 
 const getUserLoans = (email) => dispatch => {
-    axios.get("http://localhost:8000/api/users/getuserloans", email)
+    axios.get("https://arbank-server.herokuapp.com/api/users/getuserloans", email)
         .then(res => {
             return dispatch({
                 type: Types.LOAD_LOANS,
@@ -28,7 +28,7 @@ const getUserLoans = (email) => dispatch => {
 }
 
 const getAlluserLoans = () => dispatch => {
-    axios.get("http://localhost:8000/api/users/alluserloans")
+    axios.get("https://arbank-server.herokuapp.com/api/users/alluserloans")
         .then(res => {
             return dispatch({
                 type: Types.LOAD_LOANS,
@@ -42,7 +42,7 @@ const getAlluserLoans = () => dispatch => {
 
 const deleteLoans = (loanid) => dispatch => {
     console.log(loanid)
-    axios.delete(`http://localhost:8000/api/users/deleteLoans/${loanid}`)
+    axios.delete(`https://arbank-server.herokuapp.com/api/users/deleteLoans/${loanid}`)
         .then(res => {
             console.log(res)
             return dispatch({

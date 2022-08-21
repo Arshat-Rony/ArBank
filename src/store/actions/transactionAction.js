@@ -3,7 +3,7 @@ import * as Types from "../actions/types"
 
 
 const getAlltrans = (email) => dispatch => {
-    axios.get(`http://localhost:8000/api/users/transactions/${email}`)
+    axios.get(`https://arbank-server.herokuapp.com/api/users/transactions/${email}`)
         .then(res => {
             if (res) {
                 dispatch({
@@ -20,7 +20,7 @@ const getAlltrans = (email) => dispatch => {
 
 const sendTransaction = (data) => dispatch => {
     console.log(data)
-    axios.post("http://localhost:8000/api/users/transactions", data)
+    axios.post("https://arbank-server.herokuapp.com/api/users/transactions", data)
         .then(res => {
             console.log(res)
             if (res) {
@@ -37,7 +37,7 @@ const sendTransaction = (data) => dispatch => {
 
 
 const updateTransactions = (transaction, data) => dispatch => {
-    axios.put(`http://localhost:8000/api/users/transactions/${transaction._id}`, data)
+    axios.put(`https://arbank-server.herokuapp.com/api/users/transactions/${transaction._id}`, data)
         .then(res => {
             console.log(res.data)
             dispatch({
@@ -53,7 +53,7 @@ const updateTransactions = (transaction, data) => dispatch => {
 
 
 const deleteTransaction = (transaction) => dispatch => {
-    axios.delete(`http://localhost:8000/api/users/transactions/${transaction._id}`)
+    axios.delete(`https://arbank-server.herokuapp.com/api/users/transactions/${transaction._id}`)
         .then(res => {
             dispatch({
                 type: Types.DELETE_TRANSACTION,

@@ -23,7 +23,7 @@ const Service = () => {
             <div className='container row row-cols-1 row-cols-md-3 mx-auto gap-3'>
                 {
                     servicesData.map(service =>
-                        <div key={service.id} className="py-4 mt-5 service rounded-3">
+                        <div key={service.id} className="py-4 mt-5 service mx-auto rounded-3">
                             <h6 className='text-danger ps-3 mb-2'>{service.name}</h6>
                             <img className='img-fluid' src={service.img} alt="" />
                             <Link className='d-flex justify-content-between align-items-center px-3 mt-4 text-decoration-none' to="/account">View Details <FiArrowRightCircle /></Link>

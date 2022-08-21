@@ -7,7 +7,7 @@ import setAuthToken from '../../utilities/setAuthToken';
 
 
 const userRegister = (user, navigate) => dispatch => {
-    axios.post(`http://localhost:8000/api/users/registration`, user)
+    axios.post(`https://arbank-server.herokuapp.com/api/users/registration`, user)
         .then(res => {
             const token = res.data.token.split(" ")[1];
             localStorage.setItem("auth_token", token)
@@ -35,7 +35,7 @@ const userRegister = (user, navigate) => dispatch => {
 
 
 const userLogin = (user, navigate) => dispatch => {
-    axios.post(`http://localhost:8000/api/users/login`, user)
+    axios.post(`https://arbank-server.herokuapp.com/api/users/login`, user)
         .then((res) => {
             const token = res.data.token.split(" ")[1];
             localStorage.setItem("auth_token", token)
@@ -63,7 +63,7 @@ const userLogin = (user, navigate) => dispatch => {
 
 
 const update = (userData) => dispatch => {
-    axios.put(`http://localhost:8000/api/users/userupdate`, userData)
+    axios.put(`https://arbank-server.herokuapp.com/api/users/userupdate`, userData)
         .then(res => {
             dispatch({
                 type: Types.SET_USER,
@@ -88,7 +88,7 @@ const logOut = () => dispatch => {
 }
 
 const getAllusers = () => dispatch => {
-    axios.get("http://localhost:8000/api/users/allusers")
+    axios.get("https://arbank-server.herokuapp.com/api/users/allusers")
         .then(res =>
             dispatch({
                 type: Types.LOAD_USERS,
@@ -99,7 +99,7 @@ const getAllusers = () => dispatch => {
         )
 }
 const removeUser = (id) => dispatch => {
-    axios.delete(`http://localhost:8000/api/users/deleteuser/${id}`)
+    axios.delete(`https://arbank-server.herokuapp.com/api/users/deleteuser/${id}`)
         .then(res =>
             dispatch({
                 type: Types.DELETE_USER,

@@ -24,7 +24,7 @@ const Services = () => {
             <h2 className='my-3'>Only the best professional services</h2>
             <small className='lead text-secondary'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto sequi nam aperiam soluta magni numquam.</small>
 
-            <div className='row row-cols-1 row-cols-md-3 services_text_container gx-2'>
+            <div className='row row-cols-1 row-cols-md-3 services_text_container mx-auto gx-2'>
                 {
                     servicesData.map((service, index) =>
                         <div key={service.id} className="text-center mt-5 d-flex flex-column justify-content-center align-items-center services_text mx-auto p-3">

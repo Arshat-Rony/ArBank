@@ -21,7 +21,7 @@ const formsData = [
 const MyProfiles = (props) => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const user = useSelector(state => state.rootReducer.auth.user)
-    console.log(user)
+
     const [show, setShow] = useState(false)
 
 
@@ -64,6 +64,8 @@ const MyProfiles = (props) => {
                     <img className='img-fluid rounded-2' src={user?.image} alt="" />
                     <p className="card-text text-capitalize mt-3">Profession : {user?.profession}</p>
                     <p className="card-text text-capitalize">Address : {user?.address}</p>
+                    <p className="text-danger"> Your Total Balance : <span className="text-dark fw-bold">{user.balance}</span></p>
+                    <p>Income : {user.income}</p>
                     <button onClick={() => setShow(!show)} className="btn btn-danger rounded-0 ">Update Profile</button>
                 </div>
             </div>}

@@ -43,7 +43,9 @@ const MyAccount = (props) => {
 
     return (
         <div className='container'>
-            <button onClick={() => setShowform(!showform)} className={`btn btn-danger text-md-end d-block ms-auto `}>{showform ? "See All Transactions" : "Make New Transactions"}</button>
+
+            <button onClick={() => setShowform(!showform)} className={`btn btn-danger text-md-end d-block ms-auto`}>{showform ? "See All Transactions" : "Make New Transactions"}</button>
+
             <div className={`${showform ? "d-block" : "d-none"}`}>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {
